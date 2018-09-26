@@ -1,20 +1,26 @@
 # SOME BASIC EXAMPLES FOR ASYNC PHP EXECUTION
 
 ## launch
+
 `docker-compose up -d`
 
 ##enter into container
+
 `docker exec -it asyncphpexamples bash`
 
 ##run scripts
-CLI (from within container)*: `php cli.php`
-CGI: go to localhost in browser
+
+- CLI (from within container)*: `php cli.php`
+- CGI: go to localhost in browser
 
 ##stop
+
 `docker-compose down`
 
 ##clear
+
 `docker image rm asyncphpexamples`
+
 `docker image rm asyncphpexamples_webserver`
 
 ##P.S.
