@@ -1,0 +1,26 @@
+version: "3.4"
+services:
+
+    php-fpm:
+      build: 
+        context: .
+        dockerfile: ./Dockerfile
+      image: "asyncphpexamples"
+      container_name: "asyncphpexamples"
+      working_dir: /src
+      ports:
+        - "9090:9090"
+      volumes:
+        - ./src:/src
+
+    webserver:
+      image: nginx
+      container_name: "asyncphpexamples_webserver"
+      working_dir: /src
+      volumes:
+        - ./src:/src
+        - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+        - "80:80"
+      depends_on:
+        - php-fpm
